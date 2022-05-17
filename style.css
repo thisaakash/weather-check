@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #222222;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    color: aliceblue;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.line3{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+}
+.line3 * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 0.3rem;
+}
+.container *  {
+    padding: .1em;
+}
+.head
+{
+        margin: 1rem;
+        font-size: 60px; 
+}
+
+
+.input{
+    width: 30rem;
+    height: 2rem;
+    font-size: large;
+}
+.btn{
+    height: 2rem;
+    font-size: large;
+}
+
+ .container {
+    
+     flex-direction: column;
+ }
+ .c{
+     font-size: 40px;
+ }
+ .line3{
+     margin: 3rem;
+ }
+ .name{
+     font-size:xx-large
+ }
+ .weather{
+     font-size: xx-large;
+ }
+ .image{
+     height: auto;
+     width: auto;
+ }
+
+
+@media only screen and (max-width : 600px) 
+{
+   .input{
+       width: 13rem;
+       height: 2rem;
+       font-size: large;
+   }
+   .btn{
+       height: 2rem;
+       font-size: large;
+   }
+    .head{
+        font-size: 25px;
+    }
+    .container {
+       
+        flex-direction: column;
+    }
+    .c{
+        font-size: 20px;
+    }
+    .line3{
+        margin-top: 50%;
+    }
+    .name{
+        font-size: large;
+    }
+    .weather{
+        font-size: large;
+    }
+    .image{
+        height: auto;
+        width: auto;
+    }
+}
+
