@@ -1,7 +1,10 @@
 var button = document.querySelector('.btn')
 var inputValue = document.querySelector('.input')
+ 
+
 button.addEventListener('click',function()
 {
+
   var empt = document.getElementById("input").value;
   if (empt === "")
   {
@@ -21,12 +24,18 @@ button.addEventListener('click',function()
 
        let a = data.location.name;
        let b = data.current.temp_c;
-       let icon = data.current.condition.icon;  
+       let icon = data.current.condition.icon;
+      
+
         document.getElementById('fcity').innerText =a;
+
         document.getElementById('ftemp').innerText = b +"°C";
         document.getElementById('image').src = `https:${icon}`;
 
 })
+
+  
+
     var objToday = new Date(),
 	weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
 	dayOfWeek = weekday[objToday.getDay()],
@@ -40,10 +49,19 @@ button.addEventListener('click',function()
 	curSeconds = objToday.getSeconds() < 10 ? "0" + objToday.getSeconds() : objToday.getSeconds(),
 	curMeridiem = objToday.getHours() > 12 ? "PM" : "AM";
 var today =  dayOfWeek + " " + dayOfMonth + " of " + curMonth + ", " + curYear;
+
+
 document.getElementById("fdate").innerText = today;
+
   }  
+
 })
+
+
+   
+
 //darkmode
+
 let darkMode = localStorage.getItem("darkMode");
 
 function enableDarkMode() {
@@ -59,6 +77,7 @@ function disableDarkMode() {
 
   localStorage.setItem("darkMode", null);
 }
+
 if (darkMode === "enabled") {
   enableDarkMode();
 }
