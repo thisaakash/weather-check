@@ -17,6 +17,11 @@ button.addEventListener('click',function()
         document.getElementById('image').src = `https:${icon}`;
     })
 
+ fetch('https://api.countapi.xyz/hit/aakash-weather')
+    .then(response => response.json())
+    .then(data => {
+    })
+
     var objToday = new Date(),
 	weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
 	dayOfWeek = weekday[objToday.getDay()],
