@@ -17,7 +17,8 @@ button.addEventListener('click',function()
   }
   else 
   {
-   
+    image.style.height = '100px';
+    image.style.width = '100px';
     fetch('https://api.weatherapi.com/v1/current.json?key=dc994bd78dc44e3784d190925221705&q='+inputValue.value+'&aqi=yes')
     .then(response => response.json())
     .then(data => {
