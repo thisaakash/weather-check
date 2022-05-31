@@ -1,24 +1,32 @@
 var button = document.querySelector('.btn')
 var inputValue = document.querySelector('.input')
- 
-
 button.addEventListener('click',function()
 {
+  var empt = document.getElementById("input").value;
+  if (empt === "")
+  {
+    document.getElementById('fcity').innerText ="";
+    document.getElementById("fdate").innerText = "";
+    document.getElementById('ftemp').innerText = "";
+    image.style.height = '125px';
+    image.style.width = '250px';
+    document.getElementById('image').src = "https://i.ibb.co/gvWGddV/Kids-Virtual-Store-for-Cloud-Shop-Banner-1.png";
+  }
+  else 
+  {
+   
     fetch('https://api.weatherapi.com/v1/current.json?key=dc994bd78dc44e3784d190925221705&q='+inputValue.value+'&aqi=yes')
     .then(response => response.json())
     .then(data => {
 
        let a = data.location.name;
        let b = data.current.temp_c;
-       let icon = data.current.condition.icon;
-
+       let icon = data.current.condition.icon;  
         document.getElementById('fcity').innerText =a;
         document.getElementById('ftemp').innerText = b +"°C";
         document.getElementById('image').src = `https:${icon}`;
-    })
 
-
-
+})
     var objToday = new Date(),
 	weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
 	dayOfWeek = weekday[objToday.getDay()],
@@ -32,15 +40,10 @@ button.addEventListener('click',function()
 	curSeconds = objToday.getSeconds() < 10 ? "0" + objToday.getSeconds() : objToday.getSeconds(),
 	curMeridiem = objToday.getHours() > 12 ? "PM" : "AM";
 var today =  dayOfWeek + " " + dayOfMonth + " of " + curMonth + ", " + curYear;
-
-
 document.getElementById("fdate").innerText = today;
-   
+  }  
 })
-   
-
 //darkmode
-
 let darkMode = localStorage.getItem("darkMode");
 
 function enableDarkMode() {
@@ -56,7 +59,6 @@ function disableDarkMode() {
 
   localStorage.setItem("darkMode", null);
 }
-
 if (darkMode === "enabled") {
   enableDarkMode();
 }
